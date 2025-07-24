@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form</title>
+    <style> 
+    
+     body{ text-align: center; 
+    background-color: aliceblue;
+    } 
+   
+     form{ 
+        display: table;
+     
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        border-spacing: 10px;
+        
+        
+    }
+
+     p{ 
+        display: table-row;
+     }
+
+     label{ 
+        display: table-cell;
+     }
+     input{ display: table-cell;}
+    </style>
+</head>
+<body>
+    <h1>Student Registration</h1> 
+    <form action=""> 
+        <h4>Enter details</h4>
+        <div> 
+            <p><label for="SName">Student Name:</label> <input type="text" name="SName" id="SName"> </p>
+       
+        <p><label for="SRoll">Roll Number:</label> <input type="text" name="SRoll" id="SRoll"></p>
+        <p><label for="SEmail">Student Email:</label> <input type="email" name="SEmail" id="SEmail"> </p>
+        <p><label for="SPhone">Phone:</label> <input type="text" name="SPhone" id="SPhone"></p>
+         <label for="SGender">Gender:</label> 
+       
+       
+        
+       <p><input type="radio" id="male" name="gender" value="male"> <label for="Male">Male</label></p>
+         <p><input type="radio" id="female" name="gender" value="female"><label for="Female">Female</label> </p>
+       <p><input type="radio" id="other" name="gender" value="other"><label for="other">Others</label><br><br></p> 
+       <P><label for="branch">Select branch:</label>
+        <select name="branch" id="branch">
+        <option value="CSE">CSE</option>
+        <option value="IT">IT</option>
+        <option value="AIML">AIML</option>
+        <option value="AIDS">AIDS</option>
+        <option value="CIVIL">CIVIL</option>
+        <option value="ECE">ECE</option>
+        </select></P><br><br>
+        <button type="submit">Submit form</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form </title>
+
+    <style> 
+      body{ text-align: center; 
+    background-color: aliceblue;
+    } 
+        div{ 
+            border: 1px solid black;
+           
+            
+        }
+        form{ 
+ display:flexbox ; 
+ justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        
+
+        <form action="">  
+            <h1>Feedback Form </h1><br><br>
+            <label for="SName"> Name:</label> <input type="text" name="SName" id="SName"><br>
+            <label for="SEmail"> Email:</label> <input type="email" name="SEmail" id="SEmail"> <br>
+            <label for="">Feedback Message:</label>   <input type="textarea" name="Message" id="Message" >
+            <br>
+            <label for="">How Satisfied are you:</label>
+            <input type="radio" id="male" name="gender" value="Satisfied"><label for="">Satisfied</label>
+            <input type="radio" id="male" name="gender" value="Neutral"><label for="">Neutral</label>
+            <input type="radio" name="" id="" value="Unsatisfied"><label for="">Unsatisfied</label>
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
