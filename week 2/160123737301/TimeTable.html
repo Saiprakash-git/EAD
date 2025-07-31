@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time <Table></Table></title>
+    <style>
+      div {
+        text-align: center;
+        align-items: center;
+      }
+
+      table {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        border-collapse: collapse;
+        text-align: center;
+        font-size: 16px;
+      }
+
+      th,
+      td {
+        padding: 15px 10px;
+        border: 2px solid #333;
+      }
+
+      th {
+        background-color: rgb(111, 162, 216);
+        color: white;
+        font-weight: bold;
+      }
+      
+      /* Alternate row colors */
+      tr:nth-child(even) {
+        background-color: #f0b46b; 
+      }
+      
+      tr:nth-child(odd) {
+        background-color: #c3cfb5; 
+      }
+      
+    
+    
+      .tablediv {
+        width: 90%;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 30px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      #lunch {
+        background-color: azure;
+        writing-mode: vertical-lr;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Dept of IT</h2>
+      <h4>Class Time Table of AY 2025-26 - V SEM</h4>
+      <div class="tablediv">
+        <table border="1">
+          <tr>
+            <th>Days</th>
+            <th>9 am - 10 am </th>
+            <th>10 am -11 am</th>
+            <th>11 am -12 pm </th>
+            <th>12 pm-1pm </th>
+            <th>1 pm -2 pm</th>
+            <th>2 pm - 3 pm </th>
+            <th>3 pm - 4 pm </th>
+          </tr>
+
+          <tr>
+            <th>Monday</th>
+            <td colspan="2">CN Lab</td>
+
+            <td>FLAT</td>
+            <td id="lunch" rowspan="5">BREAK <br />LUNCH</td>
+            <td>ML</td>
+            <td>PE-2</td>
+            <td>SE</td>
+          </tr>
+          <tr>
+            <th>Tuesday</th>
+
+            <td colspan="2">CT LAB</td>
+            <td>EAD</td>
+            <td>CN</td>
+            <td>LIB</td>
+            <td>SPORTS</td>
+          </tr>
+          <tr>
+            <th>Wednesday</th>
+            <td>PE-2</td>
+            <td>EAD</td>
+            <td>CT LAB</td>
+            <td>CT LAB</td>
+            <td>SE</td>
+            <td>ML</td>
+          </tr>
+          <tr>
+            <th>Thursday</th>
+            <td>FLAT</td>
+            <td>CN</td>
+            <td>CN LAB</td>
+            <td>CN LAB</td>
+            <td>ML</td>
+            <td>EAD</td>
+          </tr>
+          <tr>
+            <th>Saturday</th>
+            <td>MENTORING</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
