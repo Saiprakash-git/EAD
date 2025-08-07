@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChessBoard Page</title>
+    <style> 
+    *{ justify-content: center; 
+        
+        background-color: rgb(233, 225, 225);
+            
+    align-items: center;}
+        .board{ 
+            border: 2px solid black;
+        }
+    h2{ padding-left: 42%; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;}
+        .Container{ 
+            width: 320px;
+            height: 320px;
+            display: flex;
+            flex-wrap: wrap;
+            border: 2px solid black;
+            margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px; 
+
+        border: 20px solid rgb(112, 50, 21);
+        }
+        
+    .square{ 
+        width: 40px;
+        height: 40px;
+        padding: 7px 7px 7px 7px;
+        align-content: center;
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+    .white{ 
+        background-color: #f1f1f1;
+    }
+    .black{ background-color: rgb(173, 161, 161);}
+    </style>
+</head>
+<body>
+   <div class="board"> 
+
+    <h2>Chessboard </h2>
+
+    <div class="Container"> 
+               
+        <div class="square white">♜</div>
+        <div class="square black">♞</div>
+        <div class="square white">♝</div>
+        <div class="square black">♛</div>
+        <div class="square white">♚</div>
+        <div class="square black">♝</div>
+        <div class="square white">♞</div>
+        <div class="square black">♜</div>
+        
+        
+        <div class="square black" id="s9" onclick="moveSoldier('s9')">♟</div>
+        <div class="square white" id="s10" onclick="moveSoldier('s10')">♟</div>
+        <div class="square black" id="s11" onclick="moveSoldier('s11')">♟</div>
+        <div class="square white" id="s12" onclick="moveSoldier('s12')">♟</div>
+        <div class="square black" id="s13" onclick="moveSoldier('s13')">♟</div>
+        <div class="square white" id="s14" onclick="moveSoldier('s14')">♟</div>
+        <div class="square black" id="s15" onclick="moveSoldier('s15')">♟</div>
+        <div class="square white" id="s16" onclick="moveSoldier('s16')">♟</div>
+        
+        <div class="square white" id="space9" onclick="placePiece('space9')"></div>
+        <div class="square black" id="space10" onclick="placePiece('space10')"></div>
+        <div class="square white" id="space11" onclick="placePiece('space11')"></div>
+        <div class="square black" id="space12" onclick="placePiece('space12')"></div>
+        <div class="square white" id="space13" onclick="placePiece('space13')"></div>
+        <div class="square black" id="space14" onclick="placePiece('space14')"></div>
+        <div class="square white" id="space15" onclick="placePiece('space15')"></div>
+        <div class="square black" id="space16" onclick="placePiece('space16')"></div>
+        
+       
+        
+        <div class="square black" ></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        <div class="square white"></div>
+        <div class="square black"></div>
+        
+        <div class="square black" id="space1" onclick="placePiece('space1')"></div>
+        <div class="square white" id="space2" onclick="placePiece('space2')"></div>
+        <div class="square black" id="space3" onclick="placePiece('space3')"></div>
+        <div class="square white" id="space4" onclick="placePiece('space4')"></div>
+        <div class="square black" id="space5" onclick="placePiece('space5')"></div>
+        <div class="square white" id="space6" onclick="placePiece('space6')"></div>
+        <div class="square black" id="space7" onclick="placePiece('space7')"></div>
+        <div class="square white" id="space8" onclick="placePiece('space8')"></div>
+        
+        <div class="square white" id="s1" onclick="moveSoldier('s1')">♙</div>
+        <div class="square black" id="s2" onclick="moveSoldier('s2')">♙</div>
+        <div class="square white" id="s3" onclick="moveSoldier('s3')">♙</div>
+        <div class="square black" id="s4" onclick="moveSoldier('s4')">♙</div>
+        <div class="square white" id="s5" onclick="moveSoldier('s5')">♙</div>
+        <div class="square black" id="s6" onclick="moveSoldier('s6')">♙</div>
+        <div class="square white" id="s7" onclick="moveSoldier('s7')">♙</div>
+        <div class="square black" id="s8" onclick="moveSoldier('s8')">♙</div>
+       
+        <div class="square black">♖</div>
+        <div class="square white">♘</div>
+        <div class="square black">♗</div>
+        <div class="square white">♕</div>
+        <div class="square black">♔</div>
+        <div class="square white">♗</div>
+        <div class="square black">♘</div>
+        <div class="square white">♖</div>
+        
+    
+    </div>
+
+   </div>  
+
+   <script>  
+   class Stack {
+  constructor() {
+    this.items = []; 
+  }
+  push(element) {
+    this.items.push(element);
+  }
+  pop() {
+    if (this.isEmpty()) {
+      return "Stack is empty"; 
+    }
+    return this.items.pop();
+  }
+  peek() {
+    if (this.isEmpty()) {
+      return "Stack is empty"; 
+    }
+    return this.items[this.items.length - 1];
+  }
+  isEmpty() {
+    return this.items.length === 0;
+  }
+  size() {
+    return this.items.length;
+  }
+  print() {
+    console.log(this.items);
+  }
+}
+
+// Example Usage
+const pieces = new Stack();
+const index = new Stack(); 
+
+    const moveSoldier = (sid) => { 
+        let piece = document.getElementById(sid).innerHTML; 
+
+        pieces.push(piece);
+        index.push(sid); 
+        
+    } 
+
+    const placePiece = (pid) =>{ 
+        let place = document.getElementById(pid); 
+        place.innerHTML=pieces.pop(); 
+        
+        let rp= document.getElementById(index.pop()); 
+        rp.innerHTML=""; 
+    }
+   </script>
+</body>
+</html>
