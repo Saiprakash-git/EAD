@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fibonacci Comparison</title>
+</head>
+<body>
+  <h2>Fibonacci Comparison (n = 40)</h2>
+  <div id="output"></div>
+
+  <script>
+    // Recursive Fibonacci (O(2^n))
+    function fibRecursive(n) {
+      if (n <= 1) return n;
+      return fibRecursive(n - 1) + fibRecursive(n - 2);
+    }
+
+    // Iterative Fibonacci (O(n))
+    function fibIterative(n) {
+      let a = 0, b = 1;
+      for (let i = 0; i < n; i++) {
+        [a, b] = [b, a + b];
+      }
+      return a;
+    }
+
+    function runComparison(n) {
+      const outputDiv = document.getElementById("output");
+
+      // Recursive
+      let start = performance.now();
+      let recursiveResult = fibRecursive(n);
+      let recursiveTime = performance.now() - start;
+
+      // Iterative
+      start = performance.now();
+      let iterativeResult = fibIterative(n);
+      let iterativeTime = performance.now() - start;
+
+      // Show results
+      outputDiv.innerHTML = `
+        <p><b>Recursive:</b> ${recursiveResult} (Time: ${recursiveTime.toFixed(4)} ms)</p>
+        <p><b>Iterative:</b> ${iterativeResult} (Time: ${iterativeTime.toFixed(4)} ms)</p>
+      `;
+    }
+
+    runComparison(40);
+  </script>
+</body>
+</html>
