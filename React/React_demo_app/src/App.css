@@ -1,0 +1,31 @@
+header{ 
+  
+ max-width: auto;
+ margin-bottom: 20px;
+ width: 100%;
+  background-color:darkolivegreen; 
+  color: white;
+}
+
+div { 
+  margin-top: 20px;
+  background-color: antiquewhite;
+
+   margin-left: auto;
+  margin-right: auto; /* Centers a block-level element with a defined width */
+  width: 80%;
+}
+
+
+button { 
+  background-color:cadetblue;
+
+  margin-left: 20px;
+  margin-right: 20px;
+  border: 1px solid black;
+  border-radius: 2px;
+  
+} 
+span{ 
+  font-size: 20px;
+}
