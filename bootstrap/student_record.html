@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Records Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-4">
+  <h2 class="mb-3">Student Records Dashboard</h2>
+  
+  
+  <form class="row g-3 mb-3">
+    <div class="col-md-6">
+      <input type="text" id="searchBox" class="form-control" placeholder="Search by Name or ID">
+    </div>
+    <div class="col-md-3">
+      <select id="deptFilter" class="form-select">
+        <option value="">Choose Department</option>
+        <option value="CSE">CSE</option>
+        <option value="ECE">ECE</option>
+        <option value="ME">ME</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <button type="button" id="filterBtn" class="btn btn-primary w-100">Filter</button>
+    </div>
+  </form>
+
+  
+  <div id="noRecordsAlert" class="alert alert-warning alert-dismissible fade" role="alert">
+    No records found!
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+  </div>
+
+  
+  <div class="table-responsive">
+    <table id="studentsTable" class="table table-striped table-hover">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Department</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>064</td>
+          <td>Vikram Ashoka</td>
+          <td>CSE</td>
+          <td>vikram@thatikonda.com</td>
+        </tr>
+        <tr>
+          <td>065</td>
+          <td>VV Phani Kumar</td>
+          <td>CSE</td>
+          <td>vv@funny.com</td>
+        </tr>
+        <tr>
+          <td>067</td>
+          <td>Dileep Singh</td>
+          <td>ME</td>
+          <td>dileap@y.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const filterBtn = document.getElementById("filterBtn");
+  const searchBox = document.getElementById("searchBox");
+  const deptFilter = document.getElementById("deptFilter");
+  const table = document.getElementById("studentsTable").getElementsByTagName("tbody")[0];
+  const noRecordsAlert = document.getElementById("noRecordsAlert");
+
+  filterBtn.addEventListener("click", () => {
+    let searchText = searchBox.value.toLowerCase();
+    let dept = deptFilter.value;
+
+    let rows = table.getElementsByTagName("tr");
+    let visibleCount = 0;
+
+    for (let row of rows) {
+      let id = row.cells[0].textContent.toLowerCase();
+      let name = row.cells[1].textContent.toLowerCase();
+      let department = row.cells[2].textContent;
+
+      if (
+        (searchText === "" || id.includes(searchText) || name.includes(searchText)) &&
+        (dept === "" || dept === department)
+      ) {
+        row.style.display = "";
+        visibleCount++;
+      } else {
+        row.style.display = "none";
+      }
+    }
+
+    
+    if (visibleCount === 0) {
+      noRecordsAlert.classList.add("show");
+    } else {
+      noRecordsAlert.classList.remove("show");
+    }
+  });
+</script>
+</body>
+</html>
